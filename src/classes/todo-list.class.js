@@ -48,5 +48,11 @@ export class TodoList {
                          this.todos = [];
 
                 this.todos = this.todos.map((obj)=> Todo.fromJson(obj));
+                
                 };
+                
+            
 };
+
+//localStorage.todo
+/* de cada objeto del arreglo localStorage.todo    */

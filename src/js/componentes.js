@@ -124,6 +124,4 @@ btnClean.addEventListener('click', ()=>{
  })
 
  
-/* const completados      = document.getElementsByClassName('.completed');
- conteo = completados.length
- console.log(conteo);*/
+ 
