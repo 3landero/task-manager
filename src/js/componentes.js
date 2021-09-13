@@ -9,9 +9,12 @@ const txtInput         = document.querySelector('.new-todo');
 const btnClean         = document.querySelector('.clear-completed');
 const ulfiltros        = document.querySelector('.filters');      
 const anchorFiltros    = document.querySelectorAll('.filtro');  
+const cuentareas       = document.querySelector('.todo-count') 
 
 
-
+window.addEventListener("load", (event)=>{
+        cuentareas.textContent = document.getElementsByClassName('completed').length;
+        })
 
 
 export  const crearTodoHTML = ( todo )=>{
@@ -57,13 +60,15 @@ divTodoList.addEventListener('click', (event)=>{
          const nombreElemento =  event.target.localName;
          const todoElemento = event.target.parentElement.parentElement;
          const todoId = todoElemento.getAttribute('data-id');
-
+         
          
         
          if(nombreElemento.includes('input') ){   //--click en el check
 
                 todoList.marcarCompletado(todoId) ;
                 todoElemento.classList.toggle('completed')
+                cuentareas.textContent = document.getElementsByClassName('completed').length;
+                
 
 
          }else if ( nombreElemento.includes('button')){    //-- hay que borrar el todo
@@ -121,7 +126,15 @@ btnClean.addEventListener('click', ()=>{
                  }
          }
    
- })
+ });
+  
+
 
  
- 
+/*
+
+ window.addEventListener("load", (event)=>{
+   cuentareas.textContent = document.getElementsByClassName('completed').length;
+   })
+
+ */
